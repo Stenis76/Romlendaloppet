@@ -47,7 +47,7 @@ const CONFIG = {
   // Infobar under hero
   infoStats: [
     { label: "Startkategorier", value: "4" },
-    { label: "Åldrar välkomna", value: "0–99" },
+    { label: "Åldrar välkomna", value: "0–99+" },
     { label: "Sista anmälan", value: "20 aug" },
     { label: "Arrangör", value: "RUF P-14" }
   ],
@@ -60,7 +60,7 @@ const CONFIG = {
       age: "0–6 år",
       distance: "250 m",
       start: "10:00",
-      type: "–",
+      type: "Jogga med vår maskot",
       price: "50 kr",
       featured: false
     },
@@ -70,7 +70,7 @@ const CONFIG = {
       age: "7–12 år",
       distance: "2 km",
       start: "10:30 masstart",
-      type: "Pris till vinnaren",
+      type: "Jogga i din egen takt, alla kan var med",
       price: "50 kr",
       featured: false
     },
@@ -90,7 +90,7 @@ const CONFIG = {
       age: "Ungdom/vuxen",
       distance: "6,5 km",
       start: "12:30 nivåstart",
-      type: "Pris till vinnaren",
+      type: "Motionär och elit",
       price: "150 kr",
       featured: true // Ger en guldkantad ram
     }
@@ -98,10 +98,10 @@ const CONFIG = {
 
   // Tidslinje / Schema
   schedule: [
-    { time: "10:00", name: "Knatteloppet", detail: "250 m · Uppvärmning med maskot 09:45" },
+    { time: "10:00", name: "Knatteloppet", detail: "250 m · Uppvärmning med maskot 09:45 · Masstart" },
     { time: "10:30", name: "Juniorloppet", detail: "2 km · Masstart" },
-    { time: "11:30", name: "Lilla loppet", detail: "3,5 km · Masstart · Promenad eller jogg" },
-    { time: "12:30", name: "Stora loppet", detail: "6,5 km · Nivåstart · Pris till vinnaren" },
+    { time: "11:30", name: "Lilla loppet", detail: "3,5 km · Nivåstart - löpning och promenad" },
+    { time: "12:30", name: "Stora loppet", detail: "6,5 km · Nivåstart - motionär och elit" },
     { time: "~14:00", name: "Prisutdelning & avslutning", detail: "Lotteri, priser och firande" }
   ],
 
