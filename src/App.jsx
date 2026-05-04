@@ -22,9 +22,7 @@ const CONFIG = {
       subtitle: "Gunnars äng · Romelanda · Kl 10–14",
       primaryButtonText: "Anmäl dig här →",
       secondaryButtonText: "Läs mer",
-      // Byt ut dessa mot riktiga bilduppladdningar senare. (ex: "url(/images/slide1.jpg)")
-      // Använder en mörk bakgrundsfärg nu som platshållare.
-      bgImage: "/bollkastning.jpeg", 
+      bgImage: `${import.meta.env.BASE_URL}assets/bollkastning.jpeg`, 
     },
     {
       badge: "FÖR HELA FAMILJEN",
@@ -33,7 +31,7 @@ const CONFIG = {
       subtitle: "250 m · 2 km · 3,5 km · 6,5 km",
       primaryButtonText: "Anmäl dig här →",
       secondaryButtonText: null,
-      bgImage: "/assets/vinnare.JPG", 
+      bgImage: `${import.meta.env.BASE_URL}assets/vinnare.JPG`, 
     },
     {
       badge: "PRISER & LOTTERI",
@@ -42,7 +40,7 @@ const CONFIG = {
       subtitle: "Fika · Aktiviteter · Gemenskap",
       primaryButtonText: "Anmäl dig här →",
       secondaryButtonText: null,
-      bgImage: "/assets/flagga.jpeg",
+      bgImage: `${import.meta.env.BASE_URL}assets/flagga.jpeg`,
     }
   ],
 
