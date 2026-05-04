@@ -24,7 +24,7 @@ const CONFIG = {
       secondaryButtonText: "Läs mer",
       // Byt ut dessa mot riktiga bilduppladdningar senare. (ex: "url(/images/slide1.jpg)")
       // Använder en mörk bakgrundsfärg nu som platshållare.
-      bgImage: "/assets/bollkastning.jpeg", 
+      bgImage: "/bollkastning.jpeg", 
     },
     {
       badge: "FÖR HELA FAMILJEN",
@@ -33,7 +33,7 @@ const CONFIG = {
       subtitle: "250 m · 2 km · 3,5 km · 6,5 km",
       primaryButtonText: "Anmäl dig här →",
       secondaryButtonText: null,
-      bgImage: "public/assets/vinnare.JPG", 
+      bgImage: "/assets/vinnare.JPG", 
     },
     {
       badge: "PRISER & LOTTERI",
@@ -42,7 +42,7 @@ const CONFIG = {
       subtitle: "Fika · Aktiviteter · Gemenskap",
       primaryButtonText: "Anmäl dig här →",
       secondaryButtonText: null,
-      bgImage: "public/assets/flagga.jpeg",
+      bgImage: "/assets/flagga.jpeg",
     }
   ],
 
