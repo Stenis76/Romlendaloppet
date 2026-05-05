@@ -107,10 +107,27 @@ const CONFIG = {
 
   // Praktisk Info
   practicalInfo: [
-    { title: "Plats", desc: "Gunnars äng, Romelanda (Diseröd)" },
-    { title: "Sista anmälningsdag", desc: "Torsdag 20 aug — Efteranmälan på plats +50 kr (vuxen), +25 kr (barn/junior)" },
-    { title: "På plats", desc: "Fika, aktiviteter och lotteri" },
-    { title: "Kontakt", desc: "romelandaloppet@gmail.com" }
+    { 
+      title: "Plats", 
+      desc: "Gunnars äng, Romelanda (Diseröd)",
+      icon: <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>,
+      mapUrl: "https://www.google.com/maps/search/?api=1&query=57.924942,12.022068" // Länk till Google Maps
+    },
+    { 
+      title: "Sista anmälan", 
+      desc: "Torsdag 20 aug — Efteranmälan på plats +50 kr (vuxen), +25 kr (barn/junior)",
+      icon: <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+    },
+    { 
+      title: "På plats", 
+      desc: "Fika, aktiviteter och lotteri",
+      icon: <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+    },
+    { 
+      title: "Kontakt", 
+      desc: "romelandaloppet@gmail.com",
+      icon: <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+    }
   ]
 };
 
@@ -130,17 +147,19 @@ export default function App() {
   }, []);
 
   return (
-    <>
+    <div className="app-wrapper">
       {/* Navigation */}
       <nav className="navbar">
-        <a href="#" className="nav-logo">
-          ROMELANDA<span className="gold-text">LOPPET</span>
-        </a>
-        <div className="nav-links">
-          <a href="#om">Om loppet</a>
-          <a href="#kategorier">Kategorier</a>
-          <a href="#info">Info</a>
-          <a href={CONFIG.registrationUrl} target="_blank" rel="noreferrer" className="nav-cta">Anmäl dig</a>
+        <div className="container navbar-inner">
+          <a href="#" className="nav-logo">
+            ROMELANDA<span className="gold-text">LOPPET</span>
+          </a>
+          <div className="nav-links">
+            <a href="#om">Om loppet</a>
+            <a href="#kategorier">Kategorier</a>
+            <a href="#info">Info</a>
+            <a href={CONFIG.registrationUrl} target="_blank" rel="noreferrer" className="nav-cta">Anmäl dig</a>
+          </div>
         </div>
       </nav>
 
@@ -193,95 +212,127 @@ export default function App() {
 
       {/* Info Bar */}
       <div className="info-bar">
-        {CONFIG.infoStats.map((stat, i) => (
-          <div key={i} className="info-item">
-            <span className="info-value">{stat.value}</span>
-            <span className="info-label">{stat.label}</span>
-          </div>
-        ))}
+        <div className="container info-bar-inner">
+          {CONFIG.infoStats.map((stat, i) => (
+            <div key={i} className="info-item">
+              <span className="info-value">{stat.value}</span>
+              <span className="info-label">{stat.label}</span>
+            </div>
+          ))}
+        </div>
       </div>
 
       {/* Kategorier */}
       <section className="section" id="kategorier">
-        <h2 className="section-title">VÄLJ DITT <span className="gold-text">LOPP</span></h2>
-        <div className="categories-grid">
-          {CONFIG.races.map((race) => (
-            <div key={race.id} className={`race-card ${race.featured ? 'featured' : ''}`}>
-              <div className="race-price-badge">{race.price}</div>
-              <h3 className="race-title">{race.name}</h3>
-              
-              <div className="race-detail">
-                <span className="race-label">Ålder</span>
-                <span>{race.age}</span>
+        <div className="container">
+          <h2 className="section-title">VÄLJ DITT <span className="gold-text">LOPP</span></h2>
+          <div className="categories-grid">
+            {CONFIG.races.map((race) => (
+              <div key={race.id} className={`race-card ${race.featured ? 'featured' : ''}`}>
+                <div className="race-price-badge">{race.price}</div>
+                <h3 className="race-title">{race.name}</h3>
+                
+                <div className="race-detail">
+                  <span className="race-label">Ålder</span>
+                  <span>{race.age}</span>
+                </div>
+                <div className="race-detail">
+                  <span className="race-label">Distans</span>
+                  <span>{race.distance}</span>
+                </div>
+                <div className="race-detail">
+                  <span className="race-label">Start</span>
+                  <span>{race.start}</span>
+                </div>
+                <div className="race-detail">
+                  <span className="race-label">Typ</span>
+                  <span>{race.type}</span>
+                </div>
+                
+                {/* Extra info-text per lopp utifrån pris */}
+                <p style={{ marginTop: '20px', fontSize: '0.9rem', color: '#666' }}>
+                  * Inkluderar {parseInt(race.price) > 50 ? 'vuxenlotteri' : 'barnlotteri'}
+                </p>
               </div>
-              <div className="race-detail">
-                <span className="race-label">Distans</span>
-                <span>{race.distance}</span>
-              </div>
-              <div className="race-detail">
-                <span className="race-label">Start</span>
-                <span>{race.start}</span>
-              </div>
-              <div className="race-detail">
-                <span className="race-label">Typ</span>
-                <span>{race.type}</span>
-              </div>
-              
-              {/* Extra info-text per lopp utifrån pris */}
-              <p style={{ marginTop: '20px', fontSize: '0.9rem', color: '#666' }}>
-                * Inkluderar {parseInt(race.price) > 50 ? 'vuxenlotteri' : 'barnlotteri'}
-              </p>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </section>
 
       {/* Anmälningsbanner */}
       <div className="cta-banner">
-        <div className="cta-text">
-          <h2>REDO ATT STÄLLA UPP?</h2>
-          <p>Sista anmälningsdag: {CONFIG.registrationDeadline}</p>
+        <div className="container cta-banner-inner">
+          <div className="cta-text">
+            <h2>REDO ATT STÄLLA UPP?</h2>
+            <p>Sista anmälningsdag: {CONFIG.registrationDeadline}</p>
+          </div>
+          <a href={CONFIG.registrationUrl} target="_blank" rel="noreferrer" className="btn btn-dark">
+            Anmäl dig här →
+          </a>
         </div>
-        <a href={CONFIG.registrationUrl} target="_blank" rel="noreferrer" className="btn btn-dark">
-          Anmäl dig här →
-        </a>
       </div>
 
       {/* Schema */}
       <section className="section" style={{ backgroundColor: '#f9f9f9' }}>
-        <h2 className="section-title">TIDER <span className="gold-text">& SCHEMA</span></h2>
-        <div className="schedule-container">
-          {CONFIG.schedule.map((item, i) => (
-            <div key={i} className="schedule-item">
-              <div className="schedule-time">{item.time}</div>
-              <div className="schedule-info">
-                <h3>{item.name}</h3>
-                <p>{item.detail}</p>
+        <div className="container">
+          <h2 className="section-title">TIDER <span className="gold-text">& SCHEMA</span></h2>
+          <div className="schedule-container">
+            {CONFIG.schedule.map((item, i) => (
+              <div key={i} className="schedule-item">
+                <div className="schedule-time">{item.time}</div>
+                <div className="schedule-info">
+                  <h3>{item.name}</h3>
+                  <p>{item.detail}</p>
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </section>
 
       {/* Praktisk Info */}
       <section className="section" id="info">
-        <h2 className="section-title">PRAKTISK <span className="gold-text">INFO</span></h2>
-        <div className="info-grid">
-          {CONFIG.practicalInfo.map((info, i) => (
-            <div key={i} className="info-card">
-              <h3>{info.title}</h3>
-              <p>{info.desc}</p>
-            </div>
-          ))}
+        <div className="container">
+          <h2 className="section-title">PRAKTISK <span className="gold-text">INFO</span></h2>
+          <div className="info-grid">
+            {CONFIG.practicalInfo.map((info, i) => {
+              const CardContent = (
+                <>
+                  <div className="info-icon">{info.icon}</div>
+                  <h3>{info.title}</h3>
+                  <p>{info.desc}</p>
+                </>
+              );
+
+              return info.mapUrl ? (
+                <a 
+                  key={i} 
+                  href={info.mapUrl} 
+                  target="_blank" 
+                  rel="noreferrer" 
+                  className="info-card premium-card clickable-card"
+                >
+                  {CardContent}
+                  <div className="card-link-hint">📍 Klicka för karta →</div>
+                </a>
+              ) : (
+                <div key={i} className="info-card premium-card">
+                  {CardContent}
+                </div>
+              );
+            })}
+          </div>
         </div>
       </section>
 
       {/* Footer */}
       <footer>
-        <h2>FRÅGOR? HÖR AV DIG!</h2>
-        <a href={`mailto:${CONFIG.contactEmail}`}>{CONFIG.contactEmail}</a>
-        <div className="footer-organizer">ARRANGERAS AV {CONFIG.organizer.toUpperCase()}</div>
+        <div className="container">
+          <h2>FRÅGOR? HÖR AV DIG!</h2>
+          <a href={`mailto:${CONFIG.contactEmail}`}>{CONFIG.contactEmail}</a>
+          <div className="footer-organizer">ARRANGERAS AV {CONFIG.organizer.toUpperCase()}</div>
+        </div>
       </footer>
-    </>
+    </div>
   );
 }
