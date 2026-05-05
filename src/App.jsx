@@ -46,7 +46,7 @@ const CONFIG = {
       subtitle: "Fika · Aktiviteter · Gemenskap",
       primaryButtonText: "Anmäl dig här →",
       secondaryButtonText: null,
-      bgImage: `${import.meta.env.BASE_URL}assets/flagga.jpeg`,
+      bgImage: `${import.meta.env.BASE_URL}assets/löpning.jpeg`,
     }
   ],
 
