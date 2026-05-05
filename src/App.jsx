@@ -13,6 +13,12 @@ const CONFIG = {
   contactEmail: "romelandaloppet@gmail.com",
   organizer: "RUF P-14 · Romelanda UF",
   
+  // Sociala medier (lämna tomma om de inte ska visas)
+  socials: {
+    facebook: "https://www.facebook.com/groups/1919682515126062", 
+    instagram: "https://www.instagram.com/romelandauf_p14/" 
+  },
+  
   // Bildspel (Hero)
   slides: [
     {
@@ -127,6 +133,25 @@ const CONFIG = {
       title: "Kontakt", 
       desc: "romelandaloppet@gmail.com",
       icon: <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+    }
+  ],
+
+  // Sponsorer och Samarbetspartners
+  sponsors: [
+    {
+      name: "Renta",
+      logoUrl: `${import.meta.env.BASE_URL}assets/renta.png`, // Byt ut mot uppladdad bild, t.ex. "/renta.png"
+      website: "https://www.renta.se"
+    },
+    {
+      name: "Sponsor 2",
+      logoUrl: "https://placehold.co/300x120/transparent/666666?text=SPONSOR+2", 
+      website: "#"
+    },
+    {
+      name: "Sponsor 3",
+      logoUrl: "https://placehold.co/300x120/transparent/666666?text=SPONSOR+3", 
+      website: "#"
     }
   ]
 };
@@ -325,11 +350,54 @@ export default function App() {
         </div>
       </section>
 
+      {/* Sponsorer */}
+      {CONFIG.sponsors && CONFIG.sponsors.length > 0 && (
+        <section className="section" style={{ backgroundColor: '#fff' }}>
+          <div className="container">
+            <h2 className="section-title">SPONSORER <span className="gold-text">& PARTNERS</span></h2>
+            <div className="sponsors-grid">
+              {CONFIG.sponsors.map((sponsor, i) => (
+                <a 
+                  key={i} 
+                  href={sponsor.website} 
+                  target="_blank" 
+                  rel="noreferrer" 
+                  className="sponsor-card"
+                  title={`Besök ${sponsor.name}`}
+                >
+                  {sponsor.logoUrl ? (
+                    <img src={sponsor.logoUrl} alt={`${sponsor.name} logotyp`} className="sponsor-logo" />
+                  ) : (
+                    <span className="sponsor-name">{sponsor.name}</span>
+                  )}
+                </a>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* Footer */}
       <footer>
         <div className="container">
           <h2>FRÅGOR? HÖR AV DIG!</h2>
           <a href={`mailto:${CONFIG.contactEmail}`}>{CONFIG.contactEmail}</a>
+          
+          {(CONFIG.socials.facebook || CONFIG.socials.instagram) && (
+            <div style={{ display: 'flex', justifyContent: 'center', gap: '25px', marginBottom: '40px' }}>
+              {CONFIG.socials.facebook && (
+                <a href={CONFIG.socials.facebook} target="_blank" rel="noreferrer" style={{ marginBottom: 0 }} title="Följ oss på Facebook">
+                  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+                </a>
+              )}
+              {CONFIG.socials.instagram && (
+                <a href={CONFIG.socials.instagram} target="_blank" rel="noreferrer" style={{ marginBottom: 0 }} title="Följ oss på Instagram">
+                  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                </a>
+              )}
+            </div>
+          )}
+
           <div className="footer-organizer">ARRANGERAS AV {CONFIG.organizer.toUpperCase()}</div>
         </div>
       </footer>
