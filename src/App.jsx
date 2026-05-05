@@ -66,7 +66,7 @@ const CONFIG = {
     subtitle: "Varför vi gör detta",
     content: [
       "Romelandaloppet startades som ett initiativ av föräldragruppen i Romelanda UF Pojkar-14. Vårt mål är att samla in pengar till lagkassan, samtidigt som vi vill skapa en riktig folkfest för hela bygden.",
-      "Vi hade helt ärligt tröttnat på att sälja strumpor och lotter, vi kände att det saknades ett gemensamt, roligt och prestigelöst motionsevent i närområdet där alla – oavsett ålder och fysisk form – kan delta. Därför bestämde vi oss för att arrangera ett alldeles eget lopp på natursköna Gunnars äng.",
+      "Vi hade helt ärligt tröttnat på att sälja strumpor och lotter, vi kände att vi vill göra något kul tillsammans istället där alla är barn och föräldrar är engagerade, så då kom vi på att ett motionslopp där alla – oavsett ålder och fysisk form – kan delta. ",
       "Varenda krona i överskott går direkt tillbaka till grabbarna i laget för att finansiera framtida cuper, träningsläger och utrustning. Genom att springa Romelandaloppet gör du inte bara något bra för din egen hälsa, du stöttar också den lokala ungdomsidrotten!"
     ]
   },
