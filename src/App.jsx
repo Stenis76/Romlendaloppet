@@ -28,6 +28,7 @@ const CONFIG = {
       subtitle: "Gunnars äng · Romelanda · Kl 10–14",
       primaryButtonText: "Anmäl dig här →",
       secondaryButtonText: "Läs mer",
+      secondaryButtonLink: "#kategorier",
       bgImage: `${import.meta.env.BASE_URL}assets/bollkastning.jpeg`, 
     },
     {
@@ -47,8 +48,28 @@ const CONFIG = {
       primaryButtonText: "Anmäl dig här →",
       secondaryButtonText: null,
       bgImage: `${import.meta.env.BASE_URL}assets/löpning.jpeg`,
+    },
+    {
+      badge: "ARRANGÖR",
+      titleLine1: "Romelanda UF",
+      titleLine2: "Pojkar - födda 2014",
+      subtitle: "Förtjänsten går oavkortat till killarnas lagkassa",
+      primaryButtonText: "Anmäl dig här →",
+      secondaryButtonText: "Läs mer",
+      secondaryButtonLink: "#historia",
+      bgImage: `${import.meta.env.BASE_URL}assets/flagga.jpeg`,
     }
   ],
+
+  // Historia / Om Loppet
+  history: {
+    subtitle: "Varför vi gör detta",
+    content: [
+      "Romelandaloppet startades som ett initiativ av föräldragruppen i Romelanda UF Pojkar-14. Vårt mål är att samla in pengar till lagkassan, samtidigt som vi vill skapa en riktig folkfest för hela bygden.",
+      "Vi hade helt ärligt tröttnat på att sälja strumpor och lotter, vi kände att det saknades ett gemensamt, roligt och prestigelöst motionsevent i närområdet där alla – oavsett ålder och fysisk form – kan delta. Därför bestämde vi oss för att arrangera ett alldeles eget lopp på natursköna Gunnars äng.",
+      "Varenda krona i överskott går direkt tillbaka till grabbarna i laget för att finansiera framtida cuper, träningsläger och utrustning. Genom att springa Romelandaloppet gör du inte bara något bra för din egen hälsa, du stöttar också den lokala ungdomsidrotten!"
+    ]
+  },
 
   // Infobar under hero
   infoStats: [
@@ -214,7 +235,7 @@ export default function App() {
                   {slide.primaryButtonText}
                 </a>
                 {slide.secondaryButtonText && (
-                  <a href="#kategorier" className="btn btn-outline">
+                  <a href={slide.secondaryButtonLink || "#kategorier"} className="btn btn-outline">
                     {slide.secondaryButtonText}
                   </a>
                 )}
@@ -246,6 +267,23 @@ export default function App() {
           ))}
         </div>
       </div>
+
+      {/* Historia */}
+      <section className="section" id="historia" style={{ backgroundColor: '#fff' }}>
+        <div className="container">
+          <div style={{ maxWidth: '800px', margin: '0 auto', textAlign: 'center' }}>
+            <h2 className="section-title" style={{ marginBottom: '10px' }}>VÅR <span className="gold-text">HISTORIA</span></h2>
+            <h3 style={{ fontSize: '1.5rem', color: 'var(--text-gray)', marginBottom: '30px', fontFamily: 'var(--font-condensed)', textTransform: 'uppercase' }}>
+              {CONFIG.history.subtitle}
+            </h3>
+            <div style={{ fontSize: '1.15rem', lineHeight: '1.8', color: '#444' }}>
+              {CONFIG.history.content.map((paragraph, i) => (
+                <p key={i} style={{ marginBottom: '20px' }}>{paragraph}</p>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* Kategorier */}
       <section className="section" id="kategorier">
