@@ -153,7 +153,7 @@ export const CONFIG = {
     {
       name: "GÖSAB",
       logoUrl: `${import.meta.env.BASE_URL}assets/logga gosab.png`,
-      website: "#"
+      website: "https://gosab.se/"
     },
     {
       name: "Sponsor 3",
