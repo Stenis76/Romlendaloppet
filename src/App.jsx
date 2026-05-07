@@ -183,6 +183,47 @@ const CONFIG = {
 
 export default function App() {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [showConsent, setShowConsent] = useState(false);
+
+  const loadGA = () => {
+    // Förhindra dubbelladdning
+    if (window.gtag) return;
+    
+    const script1 = document.createElement('script');
+    script1.async = true;
+    script1.src = 'https://www.googletagmanager.com/gtag/js?id=G-5JF6012MZ2';
+    document.head.appendChild(script1);
+
+    const script2 = document.createElement('script');
+    script2.innerHTML = `
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-5JF6012MZ2');
+    `;
+    document.head.appendChild(script2);
+  };
+
+  // Kontrollera om användaren redan gjort ett val
+  useEffect(() => {
+    const consent = localStorage.getItem('cookieConsent');
+    if (consent === 'true') {
+      loadGA();
+    } else if (consent === null) {
+      setShowConsent(true);
+    }
+  }, []);
+
+  const acceptCookies = () => {
+    localStorage.setItem('cookieConsent', 'true');
+    loadGA();
+    setShowConsent(false);
+  };
+
+  const declineCookies = () => {
+    localStorage.setItem('cookieConsent', 'false');
+    setShowConsent(false);
+  };
 
   // Autoplay för bildspelet - byter slide var 4:e sekund
   useEffect(() => {
@@ -439,6 +480,21 @@ export default function App() {
           <div className="footer-organizer">ARRANGERAS AV {CONFIG.organizer.toUpperCase()}</div>
         </div>
       </footer>
+
+      {/* Cookie Consent Banner */}
+      {showConsent && (
+        <div className="cookie-consent">
+          <div className="container cookie-inner">
+            <div className="cookie-text">
+              <p>Vi använder cookies för att analysera trafik via Google Analytics. Genom att klicka på "Acceptera alla" samtycker du till vår användning av cookies.</p>
+            </div>
+            <div className="cookie-actions">
+              <button className="btn btn-outline btn-sm" onClick={declineCookies}>Neka</button>
+              <button className="btn btn-gold btn-sm" onClick={acceptCookies}>Acceptera alla</button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
