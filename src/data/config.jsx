@@ -156,9 +156,24 @@ export const CONFIG = {
       website: "https://gosab.se/"
     },
     {
-      name: "Sponsor 3",
-      logoUrl: "https://placehold.co/300x120/transparent/666666?text=SPONSOR+3",
-      website: "#"
+      name: "Laser Arena",
+      logoUrl: `${import.meta.env.BASE_URL}assets/laser-arena.png`,
+      website: "https://laserarena442.se"
+    },
+    {
+      name: "Barnens Lekstad",
+      logoUrl: `${import.meta.env.BASE_URL}assets/barnens-lekstad.jpg`,
+      website: "https://www.facebook.com/barnenslekstad/?locale=sv_SE"
+    },
+    {
+      name: "Hjorts Massage",
+      logoUrl: `${import.meta.env.BASE_URL}assets/hjorts-massage.png`,
+      website: "https://www.bokadirekt.se/places/hjorts-friskvard-massage-59150"
+    },
+    {
+      name: "Lysegårdens GK",
+      logoUrl: `${import.meta.env.BASE_URL}assets/lysegardensgk.jpeg`,
+      website: "https://lysegardensgk.se"
     }
   ]
 };
