@@ -78,7 +78,9 @@ export const CONFIG = {
       start: "10:00",
       type: "Jogga med vår maskot",
       price: "50 kr",
-      featured: false
+      featured: false,
+      mapUrl: `${import.meta.env.BASE_URL}assets/knatteloppet.png`,
+      mapPosition: 'center 65%'
     },
     {
       id: "junior",
@@ -86,9 +88,10 @@ export const CONFIG = {
       age: "7–12 år",
       distance: "2 km",
       start: "10:30 masstart",
-      type: "Jogga i din egen takt, alla kan var med",
+      type: "Jogga i din egen takt,\nalla kan vara med",
       price: "50 kr",
-      featured: false
+      featured: false,
+      mapUrl: `${import.meta.env.BASE_URL}assets/juniorloppet.png`
     },
     {
       id: "lilla",
@@ -98,7 +101,8 @@ export const CONFIG = {
       start: "11:30 masstart",
       type: "Promenad eller jogg",
       price: "150 kr",
-      featured: false
+      featured: false,
+      mapUrl: `${import.meta.env.BASE_URL}assets/lillaloppet.png`
     },
     {
       id: "stora",
@@ -108,7 +112,8 @@ export const CONFIG = {
       start: "12:30 nivåstart",
       type: "Motionär och elit",
       price: "150 kr",
-      featured: true
+      featured: true,
+      mapUrl: `${import.meta.env.BASE_URL}assets/stora-loppet.png`
     }
   ],
 
