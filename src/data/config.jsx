@@ -179,6 +179,11 @@ export const CONFIG = {
       name: "Lysegårdens GK",
       logoUrl: `${import.meta.env.BASE_URL}assets/lysegardensgk.jpeg`,
       website: "https://lysegardensgk.se"
+    },
+    {
+      name: "Hornbach",
+      logoUrl: `${import.meta.env.BASE_URL}assets/hornbach.png`,
+      website: "https://www.hornbach.se"
     }
   ]
 };
