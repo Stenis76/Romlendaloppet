@@ -184,6 +184,11 @@ export const CONFIG = {
       name: "Hornbach",
       logoUrl: `${import.meta.env.BASE_URL}assets/hornbach.png`,
       website: "https://www.hornbach.se"
+    },
+    {
+      name: "Salong Kavat",
+      logoUrl: `${import.meta.env.BASE_URL}assets/kavat.jpeg`,
+      website: "https://bokning.voady.se/salongkavat/salongkavat/"
     }
   ]
 };
