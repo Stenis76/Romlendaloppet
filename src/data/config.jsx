@@ -189,6 +189,11 @@ export const CONFIG = {
       name: "Salong Kavat",
       logoUrl: `${import.meta.env.BASE_URL}assets/kavat.jpeg`,
       website: "https://bokning.voady.se/salongkavat/salongkavat/"
+    },
+    {
+      name: "Hagmans Bygg",
+      logoUrl: `${import.meta.env.BASE_URL}assets/hagmans.jpeg`,
+      website: "https://www.hagmansbygg.com"
     }
   ]
 };
