@@ -150,6 +150,44 @@ export const CONFIG = {
   ],
 
   sponsors: [
+  {
+    name: "Salong Active",
+    logoUrl: `${import.meta.env.BASE_URL}assets/Salong-active.jpg`,
+    website: "https://www.salongactive.com/"
+    },
+
+    {
+    name: "Tjörnbro Arena",
+    logoUrl: `${import.meta.env.BASE_URL}assets/Körbro-arena.png`,
+    website: "https://tjornbroarena.se/ "
+    },
+
+    {
+    name: "ML Tryck",
+    logoUrl: `${import.meta.env.BASE_URL}assets/MLtryck.png`,
+    website: "https://mltryck.se/ "
+    },
+
+    {
+    name: "Gokart Centralen",
+    logoUrl: `${import.meta.env.BASE_URL}assets/gokartcentralen.png`,
+    website: "https://gokartcentralen.se/ "
+    },
+
+    {
+    name: "Allhyr",
+    logoUrl: `${import.meta.env.BASE_URL}assets/Allhyr.png`,
+    website: "https://allhyr.se/"
+    },
+
+    {
+    name: "Trappan Bio",
+    logoUrl: `${import.meta.env.BASE_URL}assets/TRAPPAN-BIO.jpg`,
+    website: "https://www.trappanbio.se/"
+    },
+
+
+
     {
       name: "Renta",
       logoUrl: `${import.meta.env.BASE_URL}assets/renta.png`,
